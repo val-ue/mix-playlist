@@ -1,16 +1,16 @@
 const epicMix = [
-  "Time to Pretend",
-  "O-o-oh Child",
-  "Wish You Were Here",
-  "Heroes",
-  "I Put a Spell on You",
-  "Call Me",
+  "Sunny Side Up",
+  "Pocker Face",
+  "HandClap",
+  "Telephone",
+  "1 of 1",
+  "Get Lucky",
   "Paper Planes",
-  "Jolene",
-  "You Don't Own Me",
-  "Fast Car",
-  "Run the World (Girls)",
-  "Superstition"
+  "Good Time",
+  "Robot Rock",
+  "Jam Jam",
+  "Russian Roulette",
+  "Mr. Saxobeat"
 ];
 
 const mixList = document.querySelector(".mix");
@@ -20,4 +20,16 @@ const total = document.querySelector(".total");
 button.addEventListener("click", function () {
   mixList.classList.remove("hide");
   button.classList.add("hide");
+  mixInfo(epicMix);
 });
+
+total.innerText = `${epicMix.length} great songs!`;
+
+const mixInfo = function (mix) {
+  mix.forEach(function (song,index) {
+    let li = document.createElement("li");
+    li.classList.add("song");
+    li.innerHTML = `<span class="song-number">#${index + 1}</span> ${song}`;
+    mixList.append(li);
+  });
+};
